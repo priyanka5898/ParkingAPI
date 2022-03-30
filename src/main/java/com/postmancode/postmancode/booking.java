@@ -12,7 +12,7 @@ public class booking
     private int duration;
     private String status;
     private int slotid;
-    private String userid;
+    private String user_id;
     private String update_attimestamp;
     private String create_attimestamp;
 }

@@ -10,7 +10,7 @@ public class slot
     private int slotid;
     private String slot_number;
     private String Slot_Status;
-    private String userid;
+    private String user_id;
     private String update_attimestamp;
     private String create_attimestamp;
 

@@ -8,7 +8,7 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor
 public class user_parking
 {
-    private int userid;
+    private int user_id;
     private String user_name;
     private int user_contact;
     private String user_email;
