@@ -1,8 +1,6 @@
 package com.postmancode.postmancode.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -11,7 +9,7 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = "user_parking")
 @Data
-public class user_parking implements Serializable
+public class UserParking implements Serializable
 {
     private static final long serialVersionUID = 1L;
     @Id
@@ -26,8 +24,8 @@ public class user_parking implements Serializable
     private String user_email;
     @Column(name = "user_password")
     private String user_password;
-    @Column(name="update_at")
+    @Column(name = "update_at", columnDefinition = "TIMESTAMP")
     private Timestamp update_at;
-    @Column(name = "create_at")
+    @Column(name = "create_at", columnDefinition = "TIMESTAMP")
     private Timestamp create_at;
 }

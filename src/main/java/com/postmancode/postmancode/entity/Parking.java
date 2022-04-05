@@ -1,18 +1,15 @@
 package com.postmancode.postmancode.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Timestamp;
-import java.time.Instant;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "parking")
 @Data
-public class parking implements Serializable
+public class Parking implements Serializable
 {
     private static final long serialVersionUID = 1L;
     @Id
@@ -29,11 +26,9 @@ public class parking implements Serializable
     @Column(name = "pincode")
     private int pincode;
 
-    @Convert(converter = LocalDateTimeConverter.class)
-    @Column(name = "updated_at")
+    @Column(name = "updated_at", columnDefinition = "TIMESTAMP")
     private LocalDateTime updated_at;
 
-    @Convert(converter = LocalDateTimeConverter.class)
-    @Column(name = "created_at")
+    @Column(name = "created_at", columnDefinition = "TIMESTAMP")
     private LocalDateTime created_at;
 }
