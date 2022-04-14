@@ -1,16 +1,13 @@
 package com.postmancode.postmancode.repository;
 
+
 import com.postmancode.postmancode.entity.Payment;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface PaymentRepository
+public interface PaymentRepository  extends JpaRepository<Payment, Integer>
 {
-    List<Payment> getpayments();
-    Payment getpayment(int pay_id);
-    Payment payamount(int due_amount);
-    Payment updatepayment(int amount_paid, String paid_by);
-    Payment getstatus(String payment_status);
-    Payment redeemwallet(int wallet);
+
 
 }

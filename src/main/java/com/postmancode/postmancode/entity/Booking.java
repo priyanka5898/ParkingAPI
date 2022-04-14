@@ -1,6 +1,8 @@
 package com.postmancode.postmancode.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -20,14 +22,20 @@ public class Booking implements Serializable
     private int duration;
     @Column(name = "status")
     private String status;
+
     @Column(name = "slot_id")
     private int slot_id;
+
     @Column(name = "user_id")
     private String user_id;
 
+
+    @UpdateTimestamp
     @Column(name = "updated_at", columnDefinition = "TIMESTAMP")
     private Timestamp update_at;
 
+
+    @CreationTimestamp
     @Column(name = "create_at", columnDefinition = "TIMESTAMP")
     private Timestamp create_at;
 }

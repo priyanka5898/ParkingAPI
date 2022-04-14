@@ -1,6 +1,8 @@
 package com.postmancode.postmancode.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -31,9 +33,11 @@ public class Payment implements Serializable
    @Column(name = "wallet")
    private int wallet;
 
+   @UpdateTimestamp
    @Column(name = "update_at", columnDefinition = "TIMESTAMP")
    private Timestamp update_at;
 
+   @CreationTimestamp
    @Column(name = "create_at", columnDefinition = "TIMESTAMP")
    private Timestamp create_at;
 }

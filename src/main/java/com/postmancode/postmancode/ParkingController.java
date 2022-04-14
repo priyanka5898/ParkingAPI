@@ -1,32 +1,33 @@
 package com.postmancode.postmancode;
 
-<<<<<<< HEAD
 
-import com.postmancode.postmancode.entity.parking;
-import com.postmancode.postmancode.service.parkingService;
+
+import com.postmancode.postmancode.entity.Parking;
+
+import com.postmancode.postmancode.service.ParkingService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
-@RequestMapping("parking")
-public class ParkingController {
+//@Controller
+//@RequestMapping("parking")
+//public class ParkingController {
 
-    @Autowired
-    private parkingService service;
+  //  @Autowired
+    //private parkingService service;
 
-    @GetMapping("/")
-    public ResponseEntity<List<parking>> getParkings(){
+    //@GetMapping("/")
+    //public ResponseEntity<List<parking>> getParkings(){
 
-        List<parking> books = service.getParkings();
-        return new ResponseEntity<List<parking>>(books, HttpStatus.OK);
+       // List<parking> books = service.getParkings();
+        //return new ResponseEntity<List<parking>>(books, HttpStatus.OK);
 
-=======
+//=======
 import com.postmancode.postmancode.entity.Parking;
 import com.postmancode.postmancode.service.ParkingService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,6 +54,8 @@ public class ParkingController {
     @PostMapping("/Parking/newParking")
     public void addParking(@RequestBody Parking parking) {
          service.save(parking);
->>>>>>> origin/main
+
+
+
     }
 }

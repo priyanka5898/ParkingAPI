@@ -1,15 +1,11 @@
 package com.postmancode.postmancode.repository;
 
 import com.postmancode.postmancode.entity.Booking;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
 
-public interface BookingRepository
+
+public interface BookingRepository  extends JpaRepository<Booking, Integer>
 {
-  List<Booking> getbookings();
-  Booking getbooking(int booking_id);
-  Booking getduration(int duration);
-  Booking updatebooking(int booking_id, int duration);
-  Booking deletebooking(int booking_id);
 }
 

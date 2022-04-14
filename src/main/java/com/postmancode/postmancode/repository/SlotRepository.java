@@ -1,15 +1,13 @@
 package com.postmancode.postmancode.repository;
 
+
 import com.postmancode.postmancode.entity.Slot;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface SlotRepository
+public interface SlotRepository  extends JpaRepository<Slot, Integer>
 {
-    List<Slot> getslots();
-    Slot getslot(int slot_id);
-    Slot chooseslot(int parking_id, int slot_id);
-    Slot updateslot(String slot_number, String slot_status);
-    Slot deleteslot(int slot_id);
+
 
 }

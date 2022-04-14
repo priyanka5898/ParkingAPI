@@ -1,6 +1,8 @@
 package com.postmancode.postmancode.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -26,9 +28,11 @@ public class Parking implements Serializable
     @Column(name = "pincode")
     private int pincode;
 
+    @UpdateTimestamp
     @Column(name = "updated_at", columnDefinition = "TIMESTAMP")
     private LocalDateTime updated_at;
 
+    @CreationTimestamp
     @Column(name = "created_at", columnDefinition = "TIMESTAMP")
     private LocalDateTime created_at;
 }
