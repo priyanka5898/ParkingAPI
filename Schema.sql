@@ -18,6 +18,7 @@
         pincode integer,
         charge integer,
         updated_at TIMESTAMP,
+        name VARCHAR(255),
         primary key (parking_id)
     ) type=MyISAM;
 

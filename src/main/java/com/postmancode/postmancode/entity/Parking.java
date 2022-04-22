@@ -19,6 +19,9 @@ public class Parking implements Serializable
     @Column(name="parking_id")
     private int parking_id;
 
+    @Column(name="name")
+    private String name;
+
     @Column(name = "area")
     private String area;
 
