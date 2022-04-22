@@ -6,7 +6,7 @@
         slot_id integer,
         status varchar(255),
         updated_at TIMESTAMP,
-        user_id varchar(255),
+        user_id integer,
         primary key (booking_id)
     ) type=MyISAM;
 
@@ -16,6 +16,7 @@
         created_at TIMESTAMP,
         locality varchar(255),
         pincode integer,
+        charge integer,
         updated_at TIMESTAMP,
         primary key (parking_id)
     ) type=MyISAM;
@@ -25,12 +26,10 @@
         amount_paid integer,
         booking_id integer,
         create_at TIMESTAMP,
-        due_amount integer,
         paid_by varchar(255),
         payment_status varchar(255),
         update_at TIMESTAMP,
-        user_id varchar(255),
-        wallet integer,
+        user_id integer,
         primary key (pay_id)
     ) type=MyISAM;
 
@@ -41,7 +40,6 @@
         parking_id integer,
         slot_number varchar(255),
         update_at TIMESTAMP,
-        user_id varchar(255),
         primary key (slot_id)
     ) type=MyISAM;
 
@@ -55,3 +53,12 @@
         user_password varchar(255),
         primary key (user_id)
     ) type=MyISAM;
+
+     create table wallet (
+           id integer not null auto_increment,
+            user_id integer,
+            balance integer,
+            create_at TIMESTAMP,
+            update_at TIMESTAMP,
+            primary key (id)
+        ) type=MyISAM;

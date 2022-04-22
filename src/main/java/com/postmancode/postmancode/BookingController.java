@@ -1,5 +1,6 @@
 package com.postmancode.postmancode;
 
+import com.postmancode.postmancode.dto.BookingDto;
 import com.postmancode.postmancode.entity.Booking;
 import com.postmancode.postmancode.repository.BookingRepository;
 import com.postmancode.postmancode.service.BookingService;
@@ -25,5 +26,13 @@ public class BookingController
     {
         service.save(booking);
     }
+
+    @PostMapping ("/Booking/ConfirmBooking")
+    public void confirmBooking(@RequestBody BookingDto booking)
+    {
+        service.confirmBooking(booking);
+    }
+
+
 
 }

@@ -17,9 +17,7 @@ public class Payment implements Serializable
    @Id
    @GeneratedValue(strategy= GenerationType.AUTO)
    @Column(name = "pay_id")
-   private int pay_id;
-   @Column(name="due_amount")
-   private int due_amount;
+   private int id;
    @Column(name = "amount_paid")
    private int amount_paid;
    @Column(name = "payment_status")
@@ -27,11 +25,11 @@ public class Payment implements Serializable
    @Column(name = "paid_by")
    private String paid_by;
    @Column(name = "user_id")
-   private String user_id;
+   private int userId;
    @Column(name = "booking_id")
-   private int booking_id;
-   @Column(name = "wallet")
-   private int wallet;
+   private int bookingId;
+
+
 
    @UpdateTimestamp
    @Column(name = "update_at", columnDefinition = "TIMESTAMP")

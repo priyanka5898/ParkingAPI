@@ -32,6 +32,10 @@ public class SlotService
     {
         srepo.deleteById(Id);
     }
+    public List<Slot> listAllSlots(Integer parkingId)
+    {
+        return srepo.findByParkingId(parkingId);
+    }
 
 
 }

@@ -16,17 +16,17 @@ public class Slot implements Serializable
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name = "slot_id")
-    private int slot_id;
+    private int id;
     @Column(name = "slot_number")
-    private String slot_number;
+    private String number;
     @Column(name = "slot_status")
-    private String Slot_status;
+    private String status;
    // @OneToOne(cascade = CascadeType.ALL)
-    @Column(name = "user_id")
-    private String user_id;
+   // @Column(name = "user_id")
+    //private String userId;
     //@OneToOne(cascade = CascadeType.ALL)
     @Column(name = "parking_id")
-    private int parking_id;
+    private int parkingId;
 
     @UpdateTimestamp
     @Column(name = "update_at", columnDefinition = "TIMESTAMP")

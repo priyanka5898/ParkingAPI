@@ -22,4 +22,8 @@ public class UserController
 
     @PostMapping("/UserParking/User")
     public void addUser(@RequestBody UserParking user){service.save(user);}
+
+    @GetMapping("/Login/{email}/{password}")
+    public Optional<UserParking> getUserwithLogin(@PathVariable String email,@PathVariable String password)
+    {return service.login(email,password);}
 }

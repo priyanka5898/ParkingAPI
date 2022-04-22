@@ -21,4 +21,7 @@ public class SlotController
 
     @PostMapping("/Slot/Slot")
     public void addSlot(@RequestBody Slot slot){service.save(slot);}
+
+    @GetMapping("/ParkingSlots/{ParkingId}")
+    public List<Slot> getParkingSlots(@PathVariable Integer parkingId){return service.listAllSlots(parkingId);}
 }

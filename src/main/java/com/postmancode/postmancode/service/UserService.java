@@ -36,5 +36,10 @@ public class UserService
         user.deleteById(id);
     }
 
+    public Optional<UserParking> login(String email,String password)
+    {
+        return user.findByEmailAndPassword(email,password);
+    }
+
 
 }

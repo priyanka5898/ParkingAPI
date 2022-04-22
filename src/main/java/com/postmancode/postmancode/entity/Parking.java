@@ -28,6 +28,9 @@ public class Parking implements Serializable
     @Column(name = "pincode")
     private int pincode;
 
+    @Column(name="charge")
+    private int charge;
+
     @UpdateTimestamp
     @Column(name = "updated_at", columnDefinition = "TIMESTAMP")
     private LocalDateTime updated_at;

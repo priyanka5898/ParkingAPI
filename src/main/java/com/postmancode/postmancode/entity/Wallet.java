@@ -9,33 +9,25 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name = "booking")
+@Table(name = "wallet" )
 @Data
-public class Booking implements Serializable
+public class Wallet implements Serializable
 {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    @Column(name="booking_id")
+    @Column(name = "id")
     private int id;
-    @Column(name = "duration")
-    private int duration;
-    @Column(name = "status")
-    private String status;
-
-    @Column(name = "slot_id")
-    private int slotId;
-
-    @Column(name = "user_id")
+    @Column(name="user_id")
     private int userId;
-
-
+    @Column(name="balance")
+    private int balance;
     @UpdateTimestamp
     @Column(name = "updated_at", columnDefinition = "TIMESTAMP")
-    private Timestamp update_at;
-
+    private Timestamp updated_at;
 
     @CreationTimestamp
-    @Column(name = "create_at", columnDefinition = "TIMESTAMP")
-    private Timestamp create_at;
+    @Column(name = "created_at", columnDefinition = "TIMESTAMP")
+    private Timestamp created_at;
+
 }

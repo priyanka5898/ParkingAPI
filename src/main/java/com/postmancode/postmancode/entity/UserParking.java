@@ -17,15 +17,15 @@ public class UserParking implements Serializable
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name = "user_id")
-    private int user_id;
+    private int id;
     @Column(name = "user_name")
-    private String user_name;
+    private String name;
     @Column(name = "user_contact")
-    private long user_contact;
+    private long contact;
     @Column(name = "user_email")
-    private String user_email;
+    private String email;
     @Column(name = "user_password")
-    private String user_password;
+    private String password;
 
     @UpdateTimestamp
     @Column(name = "updated_at", columnDefinition = "TIMESTAMP")
