@@ -2,9 +2,10 @@ package com.postmancode.postmancode;
 
 import com.postmancode.postmancode.dto.BookingDto;
 import com.postmancode.postmancode.entity.Booking;
-import com.postmancode.postmancode.repository.BookingRepository;
 import com.postmancode.postmancode.service.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,9 +29,12 @@ public class BookingController
     }
 
     @PostMapping ("/Booking/ConfirmBooking")
-    public void confirmBooking(@RequestBody BookingDto booking)
+    public ResponseEntity<String> confirmBooking(@RequestBody BookingDto booking)
     {
-        service.confirmBooking(booking);
+        if(service.confirmBooking(booking))
+            return  ResponseEntity.status(HttpStatus.OK).body("Booking Confirmed");
+
+        return  ResponseEntity.status(HttpStatus.NOT_FOUND).body("Booking Failed");
     }
 
 
