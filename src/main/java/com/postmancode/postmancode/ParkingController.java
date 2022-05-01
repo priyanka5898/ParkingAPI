@@ -54,8 +54,10 @@ public class ParkingController {
     @PostMapping("/Parking/newParking")
     public void addParking(@RequestBody Parking parking) {
          service.save(parking);
+    }
 
-
-
+    @DeleteMapping("/Parking/{ParkingId}")
+    public void deleteParkingwithId(@PathVariable Integer ParkingId) {
+         service.delete(ParkingId);
     }
 }

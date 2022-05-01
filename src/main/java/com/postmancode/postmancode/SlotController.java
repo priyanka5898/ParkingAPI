@@ -17,11 +17,11 @@ public class SlotController
     public List<Slot> getallslots(){return service.listAll();}
 
     @GetMapping("/Slot/{Slotid}")
-    public Slot getUserwithId(@PathVariable Integer slotid){return service.get(slotid);}
+    public Slot getUserwithId(@PathVariable Integer Slotid){return service.get(Slotid);}
 
     @PostMapping("/Slot/Slot")
-    public void addSlot(@RequestBody Slot slot){service.save(slot);}
+    public void addSlot(@RequestBody Slot Slot){service.save(Slot);}
 
     @GetMapping("/ParkingSlots/{ParkingId}")
-    public List<Slot> getParkingSlots(@PathVariable Integer parkingId){return service.listAllSlots(parkingId);}
+    public List<Slot> getParkingSlots(@PathVariable Integer ParkingId){return service.listAllSlots(ParkingId);}
 }
