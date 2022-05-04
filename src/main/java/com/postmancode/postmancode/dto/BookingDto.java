@@ -8,5 +8,6 @@ public class BookingDto
 
     private int parkingId;
     private int userId;
+    private int slotId;
 
 }

@@ -51,17 +51,21 @@ public class BookingService
     }
     public boolean confirmBooking(BookingDto booking){
 
-        List<Slot> slot = slotService.listAllSlots(booking.getParkingId());
+        Slot slot = slotService.get(booking.getSlotId());
         Parking parking = parkingService.get(booking.getParkingId());
         Wallet wall = walletService.getByUserId(booking.getUserId());
         if(wall != null) {
             if(parking.getCharge() <= wall.getBalance()) {
                 Booking b= new Booking();
-                b.setSlotId(slot.get(0).getId());
+                b.setSlotId(slot.getId());
                 b.setUserId(booking.getUserId());
                 b.setStatus("BOOKED");
                 b.setDuration(1);
                 save(b);
+                wall.setBalance(wall.getBalance() - parking.getCharge());
+                walletService.save(wall);
+                slot.setStatus("BOOKED");
+                slotService.save(slot);
                 return true;
             }
             else
