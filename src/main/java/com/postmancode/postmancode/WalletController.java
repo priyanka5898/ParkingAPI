@@ -28,6 +28,6 @@ public class WalletController
         wservice.save(wallet);
     }
 
-    @GetMapping("/Wallet/{userId}")
-    public Optional<Wallet> getWalletwithuserId(@PathVariable Integer userId){return wservice.getByUserId(userId);}
+    @GetMapping("/UserWallet/{userId}")
+    public Wallet getWalletwithuserId(@PathVariable Integer userId){return wservice.getByUserId(userId);}
 }

@@ -26,4 +26,9 @@ public class UserController
     @GetMapping("/Login/{email}/{password}")
     public Optional<UserParking> getUserwithLogin(@PathVariable String email,@PathVariable String password)
     {return service.login(email,password);}
+
+    @DeleteMapping("/User/{UserId}")
+    public void deleteUserwithId(@PathVariable Integer UserId) {
+        service.delete(UserId);
+    }
 }

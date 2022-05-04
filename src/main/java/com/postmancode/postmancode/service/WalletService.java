@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @Transactional
@@ -31,7 +30,7 @@ public class WalletService
     {
         wallet.deleteById(id);
     }
-    public Optional<Wallet> getByUserId(Integer id)
+    public Wallet getByUserId(Integer id)
     {
         return wallet.findByUserId(id);
     }

@@ -53,9 +53,9 @@ public class BookingService
 
         List<Slot> slot = slotService.listAllSlots(booking.getParkingId());
         Parking parking = parkingService.get(booking.getParkingId());
-        Optional<Wallet> wall = walletService.getByUserId(booking.getUserId());
-        if(wall.isPresent()) {
-            if(parking.getCharge() <= wall.get().getBalance()) {
+        Wallet wall = walletService.getByUserId(booking.getUserId());
+        if(wall != null) {
+            if(parking.getCharge() <= wall.getBalance()) {
                 Booking b= new Booking();
                 b.setSlotId(slot.get(0).getId());
                 b.setUserId(booking.getUserId());
