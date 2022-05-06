@@ -36,7 +36,7 @@ public class SlotService
     {
         return srepo.findByParkingId(parkingId);
     }
-    public Slot findByNo(Integer slotId, Integer parkingId)
+    public Slot findByNo(String slotId, Integer parkingId)
     {
         return srepo.findByNumberAndParkingId(slotId,parkingId);
     }

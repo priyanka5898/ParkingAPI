@@ -9,6 +9,6 @@ import java.util.List;
 public interface SlotRepository  extends JpaRepository<Slot, Integer>
 {
    List<Slot> findByParkingId(Integer parkingId);
-   Slot findByNumberAndParkingId(Integer slotId, Integer parkingId);
+   Slot findByNumberAndParkingId(String slotId, Integer parkingId);
 
 }
