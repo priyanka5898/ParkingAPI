@@ -29,12 +29,9 @@ public class BookingController
     }
 
     @PostMapping ("/Booking/ConfirmBooking")
-    public ResponseEntity<String> confirmBooking(@RequestBody BookingDto booking)
+    public Booking confirmBooking(@RequestBody BookingDto booking)
     {
-        if(service.confirmBooking(booking))
-            return  ResponseEntity.status(HttpStatus.OK).body("Booking Confirmed");
-
-        return  ResponseEntity.status(HttpStatus.NOT_FOUND).body("Booking Failed");
+        return service.confirmBooking(booking);
     }
 
 

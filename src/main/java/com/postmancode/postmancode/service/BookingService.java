@@ -7,13 +7,11 @@ import com.postmancode.postmancode.entity.Parking;
 import com.postmancode.postmancode.entity.Slot;
 import com.postmancode.postmancode.entity.Wallet;
 import com.postmancode.postmancode.repository.BookingRepository;
-import com.postmancode.postmancode.repository.SlotRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
-import java.util.Optional;
 
 
 @Service
@@ -49,7 +47,7 @@ public class BookingService
     {
         book.deleteById(id);
     }
-    public boolean confirmBooking(BookingDto booking){
+    public Booking confirmBooking(BookingDto booking){
 
         Slot slot = slotService.get(booking.getSlotId());
         Parking parking = parkingService.get(booking.getParkingId());
@@ -66,14 +64,11 @@ public class BookingService
                 walletService.save(wall);
                 slot.setStatus("BOOKED");
                 slotService.save(slot);
-                return true;
+                return b;
             }
-            else
-                return false;
+            return null;
         }
-        else
-            return false;
-
+         return null;
 
     }
 
