@@ -49,7 +49,7 @@ public class BookingService
     }
     public Booking confirmBooking(BookingDto booking){
 
-        Slot slot = slotService.get(booking.getSlotId());
+        Slot slot = slotService.findByNo(booking.getSlotId(),booking.getParkingId());
         Parking parking = parkingService.get(booking.getParkingId());
         Wallet wall = walletService.getByUserId(booking.getUserId());
         if(wall != null) {
