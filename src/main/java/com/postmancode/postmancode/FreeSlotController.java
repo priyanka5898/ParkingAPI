@@ -11,8 +11,8 @@ public class FreeSlotController
     @Autowired
     public FreeSlotService serv;
 
-    @PostMapping("/FreeSlot/{slotId}/{parkingId}")
-    public void slotStatus(@RequestBody )
+  //  @PostMapping("/FreeSlot/{slotId}/{parkingId}")
+    //public void slotStatus(@RequestBody )
     {
 
     }
