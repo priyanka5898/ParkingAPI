@@ -30,4 +30,9 @@ public class WalletController
 
     @GetMapping("/UserWallet/{userId}")
     public Wallet getWalletwithuserId(@PathVariable Integer userId){return wservice.getByUserId(userId);}
+
+    @DeleteMapping("/Wallet/balance")
+    public void deleteParkingwithId(@PathVariable Integer balance) {
+        wservice.delete(balance);
+    }
 }
